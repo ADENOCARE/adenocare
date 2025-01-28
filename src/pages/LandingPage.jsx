@@ -5,7 +5,7 @@ function LandingPage() {
     <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center">
       {/* Text Section */}
       <div className="md:w-1/2 text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 float-start">
           AdenoCare - Comprehensive Health Platform
         </h1>
         <p className="text-gray-600 text-lg mb-6">
@@ -23,7 +23,7 @@ function LandingPage() {
   <img
     src="/src/assets/images/lung1.png"
     alt="AdenoCare Building"
-    className="w-100 h-auto rounded-lg "  // Adjusted the size to medium using w-64 for width and h-auto for auto height
+    className="w-100 h-auto rounded-lg float-right "  // Adjusted the size to medium using w-64 for width and h-auto for auto height
   />
 </div>
 

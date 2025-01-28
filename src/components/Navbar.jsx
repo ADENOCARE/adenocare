@@ -70,23 +70,29 @@ const Navbar = () => {
       {isOpen && (
         <ul className="md:hidden bg-blue-500 space-y-2 py-4 px-4">
           <li>
-            <a href="#home" className="block hover:text-gray-300">
+            <a href="/" className="hover:text-gray-300">
               Home
             </a>
           </li>
+    
           <li>
-            <a href="#about" className="block hover:text-gray-300">
-              About
+            <a href="/community" className="hover:text-gray-300">
+              Community
             </a>
           </li>
           <li>
-            <a href="#services" className="block hover:text-gray-300">
-              Services
+            <a href="/service" className="hover:text-gray-300">
+              Service
             </a>
           </li>
           <li>
-            <a href="#contact" className="block hover:text-gray-300">
-              Contact
+            <a href="/login" className="hover:text-gray-300">
+              Login
+            </a>
+          </li>
+          <li>
+            <a href="/register" className="hover:text-gray-300">
+              Register
             </a>
           </li>
         </ul>
