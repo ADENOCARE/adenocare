@@ -2,10 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import About from './pages/About';
+import HealthLibrary from './pages/Healthlibrary';
+import FAQ from './pages/FAQ';
 import Community from './pages/Community';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'; 
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/healthlibrary" element={<HealthLibrary />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
-      <Footer /> 
-      
+      <Footer />
     </div>
   );
 }

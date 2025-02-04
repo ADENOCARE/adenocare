@@ -12,7 +12,7 @@ const Navbar = () => {
 
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         {/* Logo */}
-        <div className="text-2xl font-bold">ADENOCARE</div>
+        <div className="text-2xl font-bold">CANCERCARE</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
@@ -21,15 +21,19 @@ const Navbar = () => {
               Home
             </a>
           </li>
-    
           <li>
-            <a href="/community" className="hover:text-gray-300">
-              Community
+            <a href="/about" className="hover:text-gray-300">
+              About
             </a>
           </li>
           <li>
-            <a href="/service" className="hover:text-gray-300">
-              Service
+            <a href="/faq" className="hover:text-gray-300">
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="/healthlibrary" className="hover:text-gray-300">
+              Health library
             </a>
           </li>
           <li>
@@ -74,15 +78,19 @@ const Navbar = () => {
               Home
             </a>
           </li>
-    
           <li>
-            <a href="/community" className="hover:text-gray-300">
-              Community
+            <a href="/about" className="hover:text-gray-300">
+              About
             </a>
           </li>
           <li>
-            <a href="/service" className="hover:text-gray-300">
-              Service
+            <a href="/healthlibrary" className="hover:text-gray-300">
+              HealthLibrary
+            </a>
+          </li>
+          <li>
+            <a href="/faq" className="hover:text-gray-300">
+              FAQ
             </a>
           </li>
           <li>
