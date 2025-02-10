@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import About from './pages/About';
 import HealthLibrary from './pages/Healthlibrary';
 import FAQ from './pages/FAQ';
+import UserDashboard from './pages/Userdashboard';
 import Community from './pages/Community';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/healthlibrary" element={<HealthLibrary />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/userdashboard" element={<UserDashboard />} />
         </Routes>
       </main>
       <Footer />

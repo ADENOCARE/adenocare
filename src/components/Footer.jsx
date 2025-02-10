@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">ADENOCARE</h3>
+            <h3 className="text-lg font-bold mb-4">CANCERCARE</h3>
             <p className="text-sm">
-            We provide diagnosis and care for individuals with lung cancer, offering early detection, access to specialized doctors, and a supportive community for sharing experiences and finding guidance.
+            We provide awareness and care for individuals who want to learn more about cancer, access to specialized doctors, and a supportive community for sharing experiences and finding guidance.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="text-center mt-8 text-sm border-t border-gray-700 pt-4">
-          © {new Date().getFullYear()} YourCompany. All Rights Reserved.
+          © {new Date().getFullYear()} cancercare. All Rights Reserved.
         </div>
       </div>
     </footer>

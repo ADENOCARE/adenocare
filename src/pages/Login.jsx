@@ -20,8 +20,8 @@ function Login() {
     // You can replace this logic with a real authentication check (e.g., API call)
     if (email === 'test@example.com' && password === 'password123') {
       setErrorMessage('');
-      // Redirect to community page (or any page after successful login)
-      navigate('/community');
+      // Redirect to Userdashboard page (or any page after successful login)
+      navigate('/userdashboard');
     } else {
       setErrorMessage('Invalid credentials, please try again.');
     }
@@ -67,7 +67,7 @@ function Login() {
             type="submit"
             className="w-full py-2 mt-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
-            Login
+          Login
           </button>
         </form>
        
