@@ -8,52 +8,60 @@ function LandingPage() {
         description:
           "Lung cancer is one of the leading causes of cancer-related deaths worldwide, often linked to smoking and environmental factors.",
         deaths: "1.8M+",
-        image: "https://source.unsplash.com/600x400/?lung,health",
+        image: "https://jnj-content-lab2.brightspotcdn.com/dims4/default/eeed922/2147483647/strip/true/crop/1184x666+128+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fjnj-production-jnj.s3.us-east-1.amazonaws.com%2Fbrightspot%2F1b%2F32%2F2e138abbf1792e49103c9e3516a8%2Fno-one-would-believe-me-when-i-suspected-i-had-lung-cancer-0923-new.jpg",
       },
       {
         type: "Breast Cancer",
         description:
           "Breast cancer is the most common cancer in women, with early detection significantly improving survival rates.",
         deaths: "685K+",
-        image: "https://source.unsplash.com/600x400/?breast,cancer",
+        image: "https://cdn.sanity.io/images/0vv8moc6/cancernetwork/a1542ea0059bfdab711ce79a7af6aec29f717704-7000x5000.jpg?fit=crop&auto=format",
       },
       {
         type: "Colorectal Cancer",
         description:
           "Colorectal cancer affects the colon or rectum and is often preventable with regular screenings and a healthy lifestyle.",
         deaths: "935K+",
-        image: "https://source.unsplash.com/600x400/?colon,health",
+        image: "https://www.iarc.who.int/wp-content/uploads/2022/07/Colorectal_banner.jpg",
       },
     ];
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gray-200 text-black py-24 px-6">
-        <div className="container mx-auto flex flex-col md:flex-row items-center">
-          {/* Text Section */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
-              Raising Cancer Awareness
-            </h1>
-            <p className="text-xl md:text-2xl mb-6 max-w-2xl">
-              Join us in spreading awareness about cancer, its symptoms, prevention,
-              and available treatments. Our platform provides resources, expert guidance,
-              and a supportive community to empower patients and caregivers.
-            </p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300">
-              Learn More
-            </button>
-          </div>
-          {/* Image Section */}
-          <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-            <img
-              src="/src/assets/images/therapy.webp" // Replace with your actual image path
-              alt="Cancer Awareness"
-              className="rounded-lg  w-full max-w-md"
-            />
-          </div>
-        </div>
-      </section>
+<section className="relative bg-gradient-to-r from-red-600 via-blue-600 to-pink-400 text-white py-20 px-6">
+  <div className="container mx-auto flex flex-col md:flex-row items-center">
+    
+    {/* Text Section */}
+    <div className="md:w-1/2 text-center md:text-left" data-aos="fade-right">
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        Raising Cancer Awareness
+      </h1>
+      <p className="text-lg md:text-2xl md:justify-center mb-6 max-w-2xl">
+        Join us in spreading awareness about cancer, its symptoms, prevention, and available treatments. 
+        Get expert guidance and connect with a supportive community.
+      </p>
+      <div className="flex justify-center md:justify-start space-x-4">
+        <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+          Learn More
+        </button>
+        <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition duration-300">
+          Join Community
+        </button>
+      </div>
+    </div>
+
+    {/* Image Section */}
+    <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left">
+      <img
+        src="/src/assets/images/lung1.png" // Replace with your actual image path
+        alt="Cancer Awareness"
+        className="rounded-lg w-full max-w-md "
+      />
+    </div>
+
+  </div>
+</section>
+
 
       {/* About Us Section */}
       <section className="container mx-auto py-10 px-6">
@@ -84,7 +92,7 @@ function LandingPage() {
             <p className="text-gray-700 mb-2">
               Our mission is to provide resources, support, and a community for individuals affected by cancer. We strive to educate, empower, and connect patients, caregivers, and healthcare professionals.
             </p>
-            <span className="text-primary font-semibold">Dr. Jane Doe, Founder</span>
+            <span className="text-primary font-semibold">Elizabeth&Bahati, Founder</span>
           </div>
           <p className="text-gray-700 mb-6">
             Through early detection, research, and patient support, we aim to fight cancer effectively. Join us in raising awareness and helping those in need.
@@ -126,9 +134,9 @@ function LandingPage() {
               <div className="p-5 text-center">
                 <h3 className="text-xl font-semibold mb-2">{cancer.type}</h3>
                 <p className="text-gray-600 mb-4">{cancer.description}</p>
-                <div className="bg-gray-200 p-3 rounded-lg">
-                  <span className="text-gray-800 font-medium text-lg">
-                    {cancer.deaths} <small className="text-gray-500">deaths</small>
+                <div className="bg-blue-700 p-3 rounded-lg">
+                  <span className="text-white font-medium text-lg">
+                    {cancer.deaths} <small className="text-white">deaths</small>
                   </span>
                 </div>
               </div>

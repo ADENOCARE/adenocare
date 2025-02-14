@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
   {
@@ -51,25 +52,40 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+    <div className="max-w-3xl mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
         Frequently Asked Questions About Cancer
       </h1>
       <div className="space-y-4">
         {faqData.map((faq, index) => (
-          <div key={index} className="border border-gray-300 rounded-lg shadow-sm">
+          <div
+            key={index}
+            className="border border-gray-300 rounded-lg shadow-lg overflow-hidden"
+          >
             <button
-              className="w-full text-left p-4 flex justify-between items-center bg-gray-100 hover:bg-gray-200"
+              className="w-full text-left p-5 flex justify-between items-center bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-200 hover:to-blue-600 transition duration-300"
               onClick={() => toggleFAQ(index)}
             >
-              <span className="font-semibold text-gray-700">{faq.question}</span>
-              <span>{openIndex === index ? "▲" : "▼"}</span>
+              <span className="font-semibold text-gray-800 text-lg">
+                {faq.question}
+              </span>
+              <span className="text-gray-700 text-xl">
+                {openIndex === index ? "▲" : "▼"}
+              </span>
             </button>
-            {openIndex === index && (
-              <div className="p-4 bg-white border-t border-gray-300">
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            )}
+            <AnimatePresence>
+              {openIndex === index && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="p-5 bg-white border-t border-gray-300"
+                >
+                  <p className="text-gray-600 text-base leading-relaxed">{faq.answer}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>

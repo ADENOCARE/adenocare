@@ -1,26 +1,31 @@
-import  { useState } from "react";
+import { useState } from "react";
+import { FaUserAlt, FaClipboardList, FaUtensils, FaComments, FaPhoneAlt } from "react-icons/fa";
 
 const UserDashboard = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-gradient-to-r from-blue-500 to-purple-600">
       {/* Sidebar */}
-      <div className="bg-gray-800 text-white w-64 p-6">
-        <h2 className="text-2xl font-bold text-center mb-8">CancerAwareness</h2>
+      <div className="bg-gray-800 text-white w-64 p-6 flex flex-col justify-between">
+        <h2 className="text-3xl font-bold text-center mb-8">CancerAwareness</h2>
         <div className="space-y-6">
-          <a href="/" className="block text-lg hover:bg-gray-700 p-2 rounded">
-            Dashboard
+          <a href="/" className="flex items-center gap-3 text-lg hover:bg-gray-700 p-2 rounded">
+            <FaUserAlt /> Dashboard
           </a>
-          <a href="/community" className="block text-lg hover:bg-gray-700 p-2 rounded">
-            Community
+          <a href="/community" className="flex items-center gap-3 text-lg hover:bg-gray-700 p-2 rounded">
+            <FaComments /> Community
           </a>
-          <a href="/appointments" className="block text-lg hover:bg-gray-700 p-2 rounded">
-            Appointments
+          <a href="/appointments" className="flex items-center gap-3 text-lg hover:bg-gray-700 p-2 rounded">
+            <FaClipboardList /> Appointments
           </a>
-          <a href="/diet" className="block text-lg hover:bg-gray-700 p-2 rounded">
-            Diet
+          <a href="/diet" className="flex items-center gap-3 text-lg hover:bg-gray-700 p-2 rounded">
+            <FaUtensils /> Diet
           </a>
+        </div>
+        <div className="mt-auto text-center">
+          <p className="text-sm">Need help? Call us at:</p>
+          <p className="text-xl font-bold"><FaPhoneAlt /> +123 456 789</p>
         </div>
       </div>
 
@@ -44,8 +49,7 @@ const UserDashboard = () => {
             {open && (
               <div className="absolute right-0 bg-white shadow-md p-4 mt-2 w-48 rounded-lg">
                 <ul className="space-y-4">
-                  <li className="text-gray-700 cursor-pointer">Change Profile</li>
-                  <li className="text-gray-700 cursor-pointer">Change Username</li>
+                  <li className="text-gray-700 cursor-pointer">Profile setting</li>
                   <li className="text-gray-700 cursor-pointer">Logout</li>
                 </ul>
               </div>
@@ -55,7 +59,7 @@ const UserDashboard = () => {
 
         {/* Dashboard Content */}
         <div className="p-6 flex flex-col gap-6 bg-gray-100 h-full">
-          <h2 className="text-2xl font-bold text-gray-800">Welcome to Your Dashboard</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Welcome to Your Dashboard</h2>
 
           {/* Informative Information about Cancer */}
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -67,19 +71,33 @@ const UserDashboard = () => {
           </div>
 
           {/* Community, Appointments, and Diet */}
-          <div className="flex gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md w-1/3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <FaComments className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700">Community</h3>
-              <p className="text-gray-600 mt-2">Join our community discussions and support groups.</p>
+              <p className="text-gray-600 mt-2 text-center">Join our community discussions and support groups.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md w-1/3">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <FaClipboardList className="text-4xl text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700">Appointments</h3>
-              <p className="text-gray-600 mt-2">Book an appointment with a doctor for consultations and check-ups.</p>
+              <p className="text-gray-600 mt-2 text-center">Book an appointment with a doctor for consultations and check-ups.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md w-1/3">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <FaUtensils className="text-4xl text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700">Diet</h3>
-              <p className="text-gray-600 mt-2">Get personalized cancer prevention diet recommendations.</p>
+              <p className="text-gray-600 mt-2 text-center">Get personalized cancer prevention diet recommendations.</p>
             </div>
+          </div>
+
+          {/* Emergency Contact */}
+          <div className="bg-red-100 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-red-700">Emergency Contact</h3>
+            <p className="text-gray-600 mt-2">
+              If you or someone you know is experiencing severe symptoms or need immediate help, please contact the emergency hotline below:
+            </p>
+            <p className="text-2xl font-bold text-red-700 mt-4">
+              <FaPhoneAlt /> +123 987 654
+            </p>
           </div>
         </div>
       </div>
