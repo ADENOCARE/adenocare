@@ -27,89 +27,89 @@ function LandingPage() {
     ];
   return (
     <div>
+
       {/* Hero Section */}
-<section className="relative bg-gradient-to-r from-red-600 via-blue-600 to-pink-400 text-white py-20 px-6">
-  <div className="container mx-auto flex flex-col md:flex-row items-center">
-    
-    {/* Text Section */}
-    <div className="md:w-1/2 text-center md:text-left" data-aos="fade-right">
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-        Raising Cancer Awareness
-      </h1>
-      <p className="text-lg md:text-2xl md:justify-center mb-6 max-w-2xl">
-        Join us in spreading awareness about cancer, its symptoms, prevention, and available treatments. 
-        Get expert guidance and connect with a supportive community.
-      </p>
-      <div className="flex justify-center md:justify-start space-x-4">
-        <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
-          Learn More
-        </button>
-        <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition duration-300">
-          Join Community
-        </button>
-      </div>
-    </div>
-
-    {/* Image Section */}
-    <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left">
-      <img
-        src="/src/assets/images/lung1.png" // Replace with your actual image path
-        alt="Cancer Awareness"
-        className="rounded-lg w-full max-w-md "
-      />
-    </div>
-
-  </div>
-</section>
-
+      <section 
+        className="relative bg-cover bg-center py-32 text-white"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="container mx-auto relative z-10 px-6">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+              Raising Cancer Awareness
+            </h1>
+            <p className="text-lg md:text-xl mb-8">
+              Join us in spreading awareness about cancer, its symptoms, prevention, and available treatments. 
+              Get expert guidance and connect with a supportive community.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                Learn More
+              </button>
+              <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition duration-300">
+                Join Community
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Us Section */}
-      <section className="container mx-auto py-10 px-6">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* Image Section */}
-        <div className="relative h-[400px]">
-          <img
-            src="/src/assets/images/image-1.jpg"
-            alt="Cancer Awareness"
-            className="w-full h-full object-cover rounded-lg"
-          />
-          <img
-            src="/src/assets/images/therapy.webp"
-            alt="Cancer Support"
-            className="absolute top-0 right-0 w-40 h-40 bg-white p-2 shadow-lg rounded-lg"
-          />
-        </div>
+      <section className="container mx-auto py-16 px-6">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Image Section */}
+          <div className="relative">
+            <img
+              src="https://res.cloudinary.com/broadcastmed/image/fetch/ar_16:9,c_fill,g_auto,f_auto,q_auto,w_1300/https%3A%2F%2F55933-bcmed.s3.amazonaws.com%2Fbcp%2Fimages%2FdmImage%2FSourceImage%2Fpancreatic-cancer-header2.jpg"
+              alt="Cancer Awareness"
+              className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1599045118108-bf9954418b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Cancer Support"
+              className="absolute -bottom-8 -right-8 w-48 h-48 bg-white p-2 shadow-lg rounded-lg border-4 border-white"
+            />
+          </div>
 
-        {/* Text Section */}
-        <div>
-          <span className="bg-secondary text-primary py-1 px-3 rounded-full text-sm font-semibold">
-            About Us
-          </span>
-          <h1 className="text-4xl font-bold text-gray-800 mt-4 mb-6">
-            Supporting Cancer Patients & Spreading Awareness
-          </h1>
-          <div className="bg-gray-100 border-l-4 border-primary p-4 mb-6">
-            <p className="text-gray-700 mb-2">
-              Our mission is to provide resources, support, and a community for individuals affected by cancer. We strive to educate, empower, and connect patients, caregivers, and healthcare professionals.
+          {/* Text Section */}
+          <div>
+            <span className="bg-blue-100 text-blue-600 py-1 px-3 rounded-full text-sm font-semibold">
+              About Us
+            </span>
+            <h1 className="text-4xl font-bold text-gray-800 mt-4 mb-6">
+              Supporting Cancer Patients & Spreading Awareness
+            </h1>
+            <div className="bg-gray-100 border-l-4 border-blue-600 p-4 mb-6">
+              <p className="text-gray-700 mb-2">
+                Our mission is to provide resources, support, and a community for individuals affected by cancer. We strive to educate, empower, and connect patients, caregivers, and healthcare professionals.
+              </p>
+              <span className="text-blue-600 font-semibold">Elizabeth & Bahati, Founders</span>
+            </div>
+            <p className="text-gray-700 mb-6">
+              Through early detection, research, and patient support, we aim to fight cancer effectively. Join us in raising awareness and helping those in need.
             </p>
-            <span className="text-primary font-semibold">Elizabeth&Bahati, Founder</span>
-          </div>
-          <p className="text-gray-700 mb-6">
-            Through early detection, research, and patient support, we aim to fight cancer effectively. Join us in raising awareness and helping those in need.
-          </p>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="bg-primary text-black py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition"
-            >
-              Learn More
-              <i className="fa fa-arrow-right"></i>
-            </a>
-            
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="bg-transparent border-2 border-blue-600 text-blue-600 py-3 px-6 rounded-lg flex items-center gap-2 hover:bg-blue-600 hover:text-white transition"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* cancer types section*/}
       <section className="bg-gray-100 py-12">
