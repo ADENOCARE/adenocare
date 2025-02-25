@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [role, setRole] = useState("user");
   const [formData, setFormData] = useState({
     name: "",
@@ -14,10 +16,31 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+  
+    try {
+      const response = await axios.post("http://localhost:5000/api/register", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+  
+      if (response.status === 201) {
+        alert("Registration successful!");
+        navigate("/login");  // Navigate to login page after successful registration
+      } else {
+        alert(`Error: ${response.data.message}`);
+      }
+    } catch (error) {
+      console.error("Error registering user:", error);
+  
+      if (error.response) {
+        alert(`Error: ${error.response.data.message || "Something went wrong"}`);
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

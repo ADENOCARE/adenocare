@@ -3,7 +3,7 @@ import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import About from './pages/About';
-import HealthLibrary from './pages/Healthlibrary';
+import HealthLibrary from './pages/HealthLibrary';
 import FAQ from './pages/FAQ';
 import Appointment from './pages/Appointment';
 import UserDashboard from './pages/Userdashboard';
