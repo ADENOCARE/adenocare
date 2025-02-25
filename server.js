@@ -91,11 +91,22 @@ app.post("/api/login", (req, res) => {
       expiresIn: "1h",
     });
 
-    // Send response with token & role
+    // Redirect based on role
+    let dashboard;
+    if (user.role === "doctor") {
+      dashboard = "/doctorsdashboard";
+    } else if (user.role === "user") {
+      dashboard = "/userdashboard";
+    } else {
+      return res.status(403).json({ message: "Unauthorized role." });
+    }
+
+    // Send response with token & redirect info
     res.status(200).json({
       message: "Login successful",
       token,
       role: user.role,
+      redirect: dashboard, // Redirect URL based on role
     });
   });
 });

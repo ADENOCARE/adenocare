@@ -10,6 +10,7 @@ import UserDashboard from './pages/Userdashboard';
 import Community from './pages/Community';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import  DoctorsDashboard from './pages/DoctorsDashboard';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/userdashboard" element={<UserDashboard />} />
           <Route path="/appointments" element={<Appointment />} />
+          <Route path="/doctorsdashboard" element={<DoctorsDashboard />} />
         </Routes>
       </main>
       <Footer />

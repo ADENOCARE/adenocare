@@ -20,7 +20,7 @@ function Login() {
       const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -29,12 +29,8 @@ function Login() {
         localStorage.setItem('token', data.token); // Store token
         localStorage.setItem('role', data.role); // Store role for future checks
 
-        // Redirect based on role
-        if (data.role === 'admin') {
-          navigate('/admin');
-        } else {
-          navigate('/userdashboard');
-        }
+        // Redirect based on role using backend response
+        navigate(data.redirect);
       } else {
         setErrorMessage(data.message || 'Invalid credentials, please try again.');
       }
