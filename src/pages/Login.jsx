@@ -24,14 +24,22 @@ function Login() {
       });
 
       const data = await response.json();
-      
+
       if (response.ok) {
-        localStorage.setItem('token', data.token); // Store token for authentication
-        navigate('/userdashboard'); // Redirect to dashboard on success
+        localStorage.setItem('token', data.token); // Store token
+        localStorage.setItem('role', data.role); // Store role for future checks
+
+        // Redirect based on role
+        if (data.role === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/userdashboard');
+        }
       } else {
         setErrorMessage(data.message || 'Invalid credentials, please try again.');
       }
-    } catch {
+    } catch (error) {
+      console.error('Login error:', error);
       setErrorMessage('Something went wrong. Please try again later.');
     }
   };
@@ -52,6 +60,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your email"
+              required
             />
           </div>
 
@@ -64,6 +73,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your password"
+              required
             />
           </div>
 
@@ -76,8 +86,13 @@ function Login() {
         </form>
 
         <p className="text-center text-sm mt-4">
-          Don&apos;t have an account? 
-          <a href="/register" className="text-blue-600 hover:underline"> Register here</a>
+          Don’t have an account?{' '}
+          <button 
+            onClick={() => navigate('/register')} 
+            className="text-blue-600 hover:underline"
+          >
+            Register here
+          </button>
         </p>
       </div>
     </div>

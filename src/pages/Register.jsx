@@ -20,26 +20,22 @@ const Register = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post("http://localhost:5000/api/register", formData, {
-        headers: { "Content-Type": "application/json" },
+      const response = await axios.post("http://localhost:5000/api/register", {
+        ...formData,
+        role,  // Include role in the request
       });
   
       if (response.status === 201) {
         alert("Registration successful!");
-        navigate("/login");  // Navigate to login page after successful registration
+        navigate("/login");
       } else {
         alert(`Error: ${response.data.message}`);
       }
     } catch (error) {
       console.error("Error registering user:", error);
-  
-      if (error.response) {
-        alert(`Error: ${error.response.data.message || "Something went wrong"}`);
-      } else {
-        alert("An error occurred. Please try again later.");
-      }
+      alert(error.response?.data?.message || "An error occurred.");
     }
-  };
+  };  
   
 
   return (
