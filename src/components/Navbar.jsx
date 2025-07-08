@@ -28,6 +28,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
+            <a href="/Classify" className="hover:text-gray-300">
+              Diagnosis
+            </a>
+          </li>
+          <li>
             <a href="/service" className="hover:text-gray-300">
               Service
             </a>

@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Community from './pages/Community';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
-
+import ClassificationPage from './pages/ClassificationPage';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Routes>
+          <Route path="/classify" element={<ClassificationPage />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
